@@ -7,9 +7,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-
-        Scanner x=new Scanner(System.in);
-
         String pathname= JOptionPane.showInputDialog("INGRESE EL NOMBRE DEL ARCHIVO A ABRIR");
         String path="C:\\Users\\gruts\\Documents\\" + pathname+".txt";
         FileUtils.leerArchivo(path);
