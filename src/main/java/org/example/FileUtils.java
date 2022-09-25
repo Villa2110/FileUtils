@@ -2,30 +2,25 @@ package org.example;
 
 import javax.swing.*;
 import java.io.*;
-import java.nio.file.FileAlreadyExistsException;
+import java.util.Scanner;
 
 public class FileUtils {
 
-    public static void leerArchivo(String path) throws FileNotFoundException {
+    public static String leerArchivo(String path) throws FileNotFoundException {
        File validar=new File(path);
-       if (validar.exists()){
-           try {
-               FileReader archivo=new FileReader(path);
-               int valor=archivo.read();
-               while (valor!=-1){
-                   System.out.print((char) valor);
-                   System.lineSeparator();
-                   valor=archivo.read();
-               }
-           } catch (IOException e) {
-               throw new RuntimeException(e);
-           }
-       } else System.out.println("Este archivo no existe");
+        Scanner x=new Scanner(validar);
+        String contenido="";
 
+        while (x.hasNextLine()){
+            System.out.println(contenido=x.nextLine());
+        }
+
+return contenido;
     }
 
     public static void crearArchivo(String texto,String path) throws IOException {
         File validar=new File(path);
+        String nombreArchivo="";
        if (!validar.isFile()) {
            FileWriter newFile= new FileWriter(path);
            newFile.write(texto);
