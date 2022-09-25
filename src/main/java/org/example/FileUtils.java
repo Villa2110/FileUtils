@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.swing.*;
 import java.io.*;
 
 public class FileUtils {
@@ -10,6 +11,7 @@ public class FileUtils {
             int valor=archivo.read();
             while (valor!=-1){
                 System.out.print((char) valor);
+                System.lineSeparator();
                 valor=archivo.read();
             }
         } catch (IOException e) {
