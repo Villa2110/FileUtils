@@ -1,11 +1,8 @@
 package org.example;
 
-import org.junit.jupiter.api.Assertions;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class FileUtilsTest {
